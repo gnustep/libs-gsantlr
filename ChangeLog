@@ -1,3 +1,8 @@
+2000-02-22  Manuel Guesdon <mguesdon@sbuilders.com>
+
+	* GNUmakefile: install gsantlr in system root (GNUSTEP_INSTALLATION_DIR)
+		instead of user root
+
 2000-01-27  Manuel Guesdon <mguesdon@sbuilders.com>
 
 	* Added LICENSE and README files
