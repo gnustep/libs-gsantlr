@@ -1,0 +1,7 @@
+2000-01-27  Manuel Guesdon <mguesdon@sbuilders.com>
+	
+	* ANTLRCharBuffer.m, ANTLRCharScanner.m, ANTLRASTFactory.m, 
+		ANTLRLog.m: Helge Hess changes tp compile with 
+		libFoundation
+
+	
