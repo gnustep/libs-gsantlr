@@ -1,0 +1,9 @@
+README
+******
+
+gsantlr library countains classes needed by code generated with ANTLR ObjC Code Generator
+
+You can find more information on ANTLR at http://www.antlr.org
+ANTLR has been developped by MageLang Institute.
+
+You'll find ANTLR ObjC Code Generator in ObjcCodeGenerator directory. You have to include these files in ANTLR tree (smae place than CppCodeGenerator,...).
