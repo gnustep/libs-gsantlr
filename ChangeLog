@@ -1,3 +1,15 @@
+2001-08-20  Adam Fedor  <fedor@gnu.org>
+
+	* Update to work with antlr 2.7.1.  NOTE: This breaks gsweb
+	which is coded to work with the output of antlr 2.5.0.
+	* ObjcCodeGenerator/ObjcCodeGenerator.java: Update
+	* ObjcCodeGenerator/mkalljar.patch: Update
+	* ObjcCodeGenerator/objc/ActionLexer.java: New file.
+	* ObjcCodeGenerator/objc/ActionLexerTokenTypes.java: New file.
+	* ObjcCodeGenerator/objc/ActionLexerTokenTypes.txt: New file.
+	* ObjcCodeGenerator/objc/action.g: New file.
+	(patch from kim@tinker.com).
+
 2000-05-01  Mirko Viviani  <mirko.viviani@rccr.cremona.it>
 
 	* ANTLRLog.m: fix for the new NSThread implementation.

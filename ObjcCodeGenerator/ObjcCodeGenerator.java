@@ -369,13 +369,13 @@ public class ObjcCodeGenerator extends CodeGenerator
 		if (rs == null || !rs.isDefined())
 		{
 			// Is this redundant???
-			tool.error("Rule '" + rr.targetRule + "' is not defined", rr.getLine());
+			tool.error("Rule '" + rr.targetRule + "' is not defined", grammar.getFilename(), rr.getLine());
 			return;
 		}
 		if (!(rs instanceof RuleSymbol))
 		{
 			// Is this redundant???
-			tool.error("'" + rr.targetRule + "' does not name a grammar rule", rr.getLine());
+			tool.error("'" + rr.targetRule + "' does not name a grammar rule", grammar.getFilename(), rr.getLine());
 			return;
 		}
 
@@ -403,7 +403,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 				// Warn if the rule has no return type
 				if (rs.block.returnAction == null)
 					{
-						tool.warning("Rule '" + rr.targetRule + "' has no return type", rr.getLine());
+						tool.warning("Rule '" + rr.targetRule + "' has no return type", grammar.getFilename(), rr.getLine());
 					}
 				_print(rr.idAssign + "=");
 			}
@@ -412,7 +412,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 				// Warn about return value if any, but not inside syntactic predicate
 				if ( !(grammar instanceof LexerGrammar) && syntacticPredLevel == 0 && rs.block.returnAction != null)
 					{
-						tool.warning("Rule '" + rr.targetRule + "' returns a value", rr.getLine());
+						tool.warning("Rule '" + rr.targetRule + "' returns a value", grammar.getFilename(), rr.getLine());
 					}
 			}
 
@@ -958,13 +958,13 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate header common to all Objective-C output files
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 
 		// Construct a charbuffer appropriate to the type of processing being done.
 		String charBufferName = "CharBuffer";
 
 		// Generate user-defined lexer file preamble
-		println(grammar.preambleAction);
+		println(grammar.preambleAction.getText());
 
 		// Generate header specific to lexer Objective-C file
 		println("#include \""+ IncludesPrefix + ClassesPrefix+"Common.h\"");
@@ -1105,10 +1105,10 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate the header common to all output files.
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 		
 		// Output the user-defined parser preamble
-		println(grammar.preambleAction);
+		println(grammar.preambleAction.getText());
 
 		// Generate header for the parser
 		println("#include \""+ IncludesPrefix + ClassesPrefix+"Common.h\"");
@@ -1252,10 +1252,10 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate the header common to all output files.
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 		
 		// Output the user-defined parser premamble
-		println(grammar.preambleAction);
+		println(grammar.preambleAction.getText());
 
 		// Generate header for the parser
 		println("#include \""+ IncludesPrefix + ClassesPrefix+"Common.h\"");
@@ -1442,7 +1442,8 @@ public class ObjcCodeGenerator extends CodeGenerator
 				if (alt.synPred != null)
 					{
 						tool.warning(
-									 "Syntactic predicate superfluous for single alternative", 
+									 "Syntactic predicate superfluous for single alternative",
+									 grammar.getFilename(), 
 									 blk.getAlternativeAt(0).synPred.getLine()
 									 );
 					};
@@ -1503,6 +1504,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 						if (p.fset.degree() == 0 && !p.containsEpsilon())
 							{
 								tool.warning("Alternate omitted due to empty prediction set",
+											 grammar.getFilename(),
 											 alt.head.getLine());
 							}
 						else
@@ -1828,7 +1830,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 					};
 
 				// When not guessing, execute user handler action
-				printAction(processActionForTreeSpecifiers(handler.action, 0, currentRule, null));
+				printAction(processActionForTreeSpecifiers(handler.action.getText(), 0, currentRule, null));
 				
 				if (grammar.hasSyntacticPredicate)
 					{
@@ -1883,7 +1885,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		println(" * Terence Parr, MageLang Institute");
 		println(" * with John Lilley, Empathy Software");
 		println(" * and Manuel Guesdon, Software Builders");
-		println(" * ANTLR Version " + ANTLRParser.version + "; 1996,1997,1998,1999");
+		println(" * ANTLR Version " + Tool.version + "; 1996,1997,1998,1999,2000");
 		println(" */");
 		println("");
 	}
@@ -1908,7 +1910,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate header common to all Objective-C output files
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 		println("");
 
 		// Construct a charbuffer appropriate to the type of processing being done.
@@ -1935,7 +1937,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 			};
 
 		// Generate user-defined lexer file preamble
-		println(grammar.preambleAction);
+		println(grammar.preambleAction.getText());
 
 		// Generate lexer class definition
 		println("@interface " + grammar.getClassName() + " : " + sup);
@@ -1965,7 +1967,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 
 		// Generate user-defined lexer class members
 		print(
-			processActionForTreeSpecifiers(grammar.classMemberAction, 0, currentRule, null)
+			processActionForTreeSpecifiers(grammar.classMemberAction.getText(), 0, currentRule, null)
 		);
 		
 		// Generate initLiterals() method
@@ -2061,7 +2063,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate the header common to all output files.
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 		
 		// Generate header for the parser
 		println("#include \""+ IncludesPrefix + ClassesPrefix+"Common.h\"");
@@ -2073,7 +2075,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		println("");
 		
 		// Output the user-defined parser preamble
-//		println(grammar.preambleAction);
+//		println(grammar.preambleAction.getText());
 
 		// Generate parser class definition
 		String sup=null;
@@ -2099,7 +2101,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 
 		// Generate user-defined parser class members
 		print(
-			processActionForTreeSpecifiers(grammar.classMemberAction, 0, currentRule, null)
+			processActionForTreeSpecifiers(grammar.classMemberAction.getText(), 0, currentRule, null)
 		);
 		println(" };");
 
@@ -2201,7 +2203,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate the header common to all output files.
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 		
 		// Find the name of the super class
 		String sup=null;
@@ -2219,7 +2221,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate header for the parser
 	
 		// Output the user-defined parser premamble
-		println(grammar.preambleAction);
+		println(grammar.preambleAction.getText());
 
 		// Generate parser class definition
 		println(System.getProperty("line.separator")+
@@ -2238,7 +2240,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 
 		// Generate user-defined parser class members
 		print(
-			processActionForTreeSpecifiers(grammar.classMemberAction, 0, currentRule, null)
+			processActionForTreeSpecifiers(grammar.classMemberAction.getText(), 0, currentRule, null)
 		);
 		println(" };");
 
@@ -2444,14 +2446,14 @@ public class ObjcCodeGenerator extends CodeGenerator
 		println(System.getProperty("line.separator")+"-("+TokenObjectDef+") nextToken");
 		println("{");
 		tabs++;
-		println(TokenObjectDef+" _rettoken=nil;");
+		println(TokenObjectDef+" theRetToken=nil;");
 		println("BOOL end=NO;");
 		println(LOGObjectFnStart);
 		println("for (;!end;)");
 		println("{");
 		tabs++;
 		// println("int _ttype = Token::EOF_TYPE;");
-		println(TokenObjectDef+" _rettoken;");
+		println(TokenObjectDef+" theRetToken;");
 		println(ClassesPrefix+"TokenType _ttype = "+ANTLRTokenPrefix+"INVALID_TYPE;");
 		println("[self resetText];");
 
@@ -2711,7 +2713,8 @@ public class ObjcCodeGenerator extends CodeGenerator
 				if (alt.synPred != null)
 					{
 						tool.warning(
-									 "Syntactic predicate ignored for single alternative", 
+									 "Syntactic predicate ignored for single alternative",
+									 grammar.getFilename(), 
 									 alt.synPred.getLine()
 									 );
 					};
@@ -2985,7 +2988,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 				// Warn if the rule accepts no arguments
 				if (rs.block.argAction == null)
 					{
-						tool.warning("Rule '" + rr.targetRule + "' accepts no arguments", rr.getLine());
+						tool.warning("Rule '" + rr.targetRule + "' accepts no arguments", grammar.getFilename(), rr.getLine());
 					}
 			}
 		else
@@ -3133,7 +3136,7 @@ public class ObjcCodeGenerator extends CodeGenerator
 		// Generate the header common to all Objective-C files
 		genHeader();
 		// Do not use printAction because we assume tabs==0
-		println(behavior.headerAction);
+		println(behavior.getHeaderAction(""));
 
 		// Encapsulate the definitions in an interface.  This can be done
 		// because they are all constants.
@@ -3222,6 +3225,21 @@ public class ObjcCodeGenerator extends CodeGenerator
 		buf.append(")");
 		return buf.toString();
 	}
+	/** Get a string for an expression to generate creating of an AST node
+	  * @param str The arguments to the AST constructor
+	  */
+	public String getASTCreateString(GrammarAtom atom, String str)
+	{
+		if ( atom!=null && atom.getASTNodeType() != null )
+			{
+				return "[" + atom.getASTNodeType() + " create:" + str + "]";
+			}
+		else
+			{
+				return "[astFactory create:" + str + "]";
+			}
+	}
+
 	/** Get a string for an expression to generate creating of an AST node
 	  * @param str The arguments to the AST constructor
 	  */
