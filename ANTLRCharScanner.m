@@ -38,7 +38,7 @@
 #include "gsantlr/ANTLRBitSet.h"
 
 #if GNUSTEP_BASE_LIBRARY
-#  include <base/Unicode.h>
+#  include <GNUstepBase/Unicode.h>
 #endif
 
 #define SELF_LA1 _ANTLRCharScanner_LA(self, 1)

@@ -46,7 +46,7 @@
 #endif
 
 #ifndef GNUSTEP
-#include <gnustep/base/GNUstep.h>
+#include <GNUstepBase/GNUstep.h>
 #endif
 
 //defines for memory management
