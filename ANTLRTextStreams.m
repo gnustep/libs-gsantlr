@@ -50,7 +50,7 @@
   if (data && [data length]==1)
 	  c=(unichar)*(char*)[data bytes];
   else
-	  [ANTLREndOfStreamException raise];
+	  c=ANTLR_EOF_CHAR;
   LOGObjectFnStop();
   return c;
 };
@@ -127,7 +127,8 @@
 	  pos++;
 	}
   else
-	  [ANTLREndOfStreamException raise];
+	  c=ANTLR_EOF_CHAR;
+
   LOGObjectFnStop();
   return c;
 };

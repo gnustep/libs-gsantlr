@@ -72,39 +72,24 @@
 #endif
 
 //--------------------------------------------------------------------
--(void)fill:(int)_amount //throws IOException;
+-(void)fill:(int)_amount
 {
   LOGObjectFnStart();
   [self syncConsume];
 
   // Fill the buffer sufficiently to hold needed characters
   while (self->queue->count < _amount + self->markerOffset)
-	{
-	  volatile unichar nextChar;
-	  static NSString *fmt = @"CharBuffer catchException:%@ (%@)";
+    {
+      unichar nextChar;
 
-	  NS_DURING
-		{
-		  if (self->_inReadChar)
-			nextChar =(unichar)(int)self->_inReadChar(self->input, @selector(readCharacter));
-		  else
-			nextChar = [self->input readCharacter];
-		}
-	  NS_HANDLER
-		{
-		  if ([localException isKindOfClass:[ANTLREndOfStreamException class]])
-			nextChar = ANTLR_EOF_CHAR;
-		  else
-			{
-			  NSLog(fmt,localException,[localException reason]);
-			  [localException raise];
-			};
-		}
-	  NS_ENDHANDLER;
-	  
-	  // Append the next character
-	  self->_queueAppend(self->queue, @selector(append:), nextChar);
-	};
+      if (self->_inReadChar)
+	nextChar =(unichar)(int)self->_inReadChar(self->input, @selector(readCharacter));
+      else
+	nextChar = [self->input readCharacter];
+
+      // Append the next character
+      self->_queueAppend(self->queue, @selector(append:), nextChar);
+    };
   LOGObjectFnStop();
 };
 

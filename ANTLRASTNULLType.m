@@ -273,6 +273,12 @@
   LOGObjectFnStop();
   return ts;
 };
-
+//------------------------------------------------------------------------------
+-(NSString*)toStringListWithSiblingSeparator:(NSString*)_siblingSep
+			       openSeparator:(NSString*)_openSep
+			      closeSeparator:(NSString*)_closeSep
+{
+  return nil;
+}
 @end
 

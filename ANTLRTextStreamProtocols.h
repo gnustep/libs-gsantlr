@@ -43,9 +43,4 @@
 
 typedef id<NSObject,ANTLRTextInputStream> ANTLRDefTextInputStream;
 
-@interface ANTLREndOfStreamException : ANTLRException
-+(void)raise;
-@end
-
-
 #endif //_ANTLRTextStreamProtocols_h_

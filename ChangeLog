@@ -1,3 +1,26 @@
+2003-11-12  David Ayers  <d.ayers@inode.at>
+
+	* ANTLRCharBuffer.m (-[ANTLRCharBuffer fill:]):  Remove exception
+	driven implementation.
+	* ANTLRTextStreams.m
+	(-[NSFileHandle readCharacter]: Ditto.
+	(-[ANTLRTextInputStreamString readCharacter]): Ditto.
+	* ANTLRTextStreamProtocols.h: Remove ANTLREndOfStreamException.
+	* ANTLRTextStreamProtocols.m: Remove file.
+	* ANTLRAST.m (-[ANTLRAST addChild:]): Correct type to allow
+	dereferncing of instance variable.  Reformat.
+	(-[ANTLRAST toString]): Replace stringWithout*: with
+	stringByDeleting*: calls.
+	* ANTLRASTNULLType.m (-[ASTNULLType
+	toStringListWithSiblingSeparator:openSeparator:closeSeparator:]):
+	Added empty implementation to complete protocol.
+	* ANTLRCharScanner.m
+	(-[ANTLRCharScanner panic:]): Correct exception invocation.  
+	(-[ANTLRCharScanner reportError:]): Ditto.
+	* ANTLRLog.m (ANTLRTIDInfo): Remove unused variable.  
+	* GNUmakefile: Move ANTLRTextStreamProtocols to PROTOCOLS from
+	CLASSES.  
+
 2003-08-25  Matt Rice  <ratmice@yahoo.com>
 
 	* ANTLRCommon.h: Updated to new header layout.

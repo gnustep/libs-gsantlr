@@ -86,17 +86,17 @@ ANTLRDefAST ANTLRASTNULL=nil;
 {
   LOGObjectFnStart();
   if (_ast)
+    {
+      ANTLRAST *tmp=down;
+      if (tmp)
 	{
-	  ANTLRDefAST tmp=down;
-	  if (tmp)
-		{
-		  while (tmp->right)
-			tmp=tmp->right;
-		  [tmp setNextSibling:_ast];
+	  while (tmp->right)
+	    tmp=(ANTLRAST *)tmp->right;
+	  [tmp setNextSibling:_ast];
         }
-	  else
-		  [self setFirstChild:_ast];
-	};
+      else
+	[self setFirstChild:_ast];
+    };
   LOGObjectFnStop();
 };
 
@@ -378,7 +378,7 @@ ANTLRDefAST ANTLRASTNULL=nil;
    // if verbose and type name not same as text (keyword probably)
    if ( verboseStringConversion &&
 		[[self text] caseInsensitiveCompare:tokenNames[[self tokenType]]]!=NSOrderedSame &&
-		[[self text] caseInsensitiveCompare:[[tokenNames[[self tokenType]] stringWithoutSuffix:@"\""] stringWithoutPrefix:@"\""]]!=NSOrderedSame)
+		[[self text] caseInsensitiveCompare:[[tokenNames[[self tokenType]] stringByDeletingSuffix:@"\""] stringByDeletingPrefix:@"\""]]!=NSOrderedSame)
 	 {
 	   NSString* string=[NSString stringWithFormat:@"[%@,<%@>]",
 								  [self text],

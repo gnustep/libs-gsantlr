@@ -11,6 +11,7 @@ PROTOCOLS = \
 	ANTLRTokenizer \
 	ANTLRAST \
 	ANTLRASTFactory \
+	ANTLRTextStreamProtocols \
 
 CATEGORIES = \
 
@@ -42,7 +43,6 @@ CLASSES = \
 	\
 	ANTLRHashString \
 	ANTLRTextStreams \
-	ANTLRTextStreamProtocols \
 	ANTLRLog \
 	$(EXCEPTIONS) \
 

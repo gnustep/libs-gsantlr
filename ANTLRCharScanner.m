@@ -468,8 +468,7 @@ unichar _ANTLRCharScanner_LA(ANTLRCharScanner *self,int _i)
   [ANTLRLogErr writeFormat:@"ANTLRCharScanner; panic: %@\n",_text];
   [ANTLRLogErr flush];
   [NSException raise:@"ANTLRCharScanner"
-			   format:@": panic: %@"
-			   arguments:_text];
+			   format:@": panic: %@", _text];
   LOGObjectFnStop();
 };
 
@@ -495,8 +494,7 @@ unichar _ANTLRCharScanner_LA(ANTLRCharScanner *self,int _i)
   [ANTLRLogErr writeFormat:@"Error: %@\n",_text];
   [ANTLRLogErr flush];
   [NSException raise:@"ANTLRCharScanner"
-			   format:@": error: %@"
-			   arguments:_text];
+			   format:@": error: %@", _text];
   LOGObjectFnStop();
 }
 

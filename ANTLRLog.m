@@ -44,7 +44,6 @@ NSString* ANTLRTIDInfo()
 #if GNUSTEP_BASE_LIBRARY
   if ([NSThread isMultiThreaded])
 	{
-	  NSThread* t = [NSThread currentThread];
 	  tinfo=[NSString stringWithFormat:@"TID=%p ",
 					 ((void*)objc_thread_id())];
 	}
