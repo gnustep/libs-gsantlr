@@ -1,0 +1,10 @@
+--- mkalljar.orig	Sat May 12 16:45:11 2001
++++ mkalljar	Fri May 11 19:03:36 2001
+@@ -7,6 +7,7 @@
+ jar cvf antlrall.jar \
+ 	antlr/actions/cpp/*.class \
+ 	antlr/actions/java/*.class \
++	antlr/actions/objc/*.class \
+ 	antlr/actions/sather/*.class \
+ 	antlr/*.class \
+ 	antlr/collections/*.class \
