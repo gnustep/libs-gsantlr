@@ -1,3 +1,6 @@
+2000-03-18  Manuel Guesdon <mguesdon@sbuilders.com>
+	ANTLRHashString.h/.m: modify length type from int to unsigned int
+	
 2000-02-22  Manuel Guesdon <mguesdon@sbuilders.com>
 
 	* GNUmakefile: install gsantlr in system root (GNUSTEP_INSTALLATION_DIR)

@@ -64,7 +64,7 @@ static int prime = 151;
 
 //--------------------------------------------------------------------
 -(id)initWithBuffer:(unichar*)_buf
-			 length:(int)_length
+			 length:(unsigned int)_length
 			  lexer:(ANTLRCharScanner*)_lexer
 {  
   LOGObjectFnStart();
@@ -110,14 +110,14 @@ static int prime = 151;
 };
 
 //--------------------------------------------------------------------
-- (int)length
+-(unsigned int)length
 {
   return s ? [s length] : len;
 };
 
 //--------------------------------------------------------------------
 -(void)setBuffer:(unichar*)_buf
-		  length:(int)_len
+		  length:(unsigned int)_len
 {
   LOGObjectFnStart();
   ANTLR_DESTROY(s);

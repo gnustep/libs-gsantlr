@@ -54,7 +54,7 @@
 		  lexer:(ANTLRCharScanner*)_lexer;
 
 -(id)initWithBuffer:(unichar*)_buf
-			 length:(int)_length
+			 length:(unsigned int)_length
 			  lexer:(ANTLRCharScanner*)_lexer;
 -(id)initWithLexer:(ANTLRCharScanner*)_lexer;
 -(id)initWithString:(NSString *)_str
@@ -64,10 +64,10 @@
 
 -(BOOL)isEqual:(id)_object;
 -(unsigned)hash;
--(int)length;
+-(unsigned int)length;
 
 -(void)setBuffer:(unichar*)_buf
-		  length:(int)_len;
+		  length:(unsigned int)_len;
 -(void)setString:(NSString*)_s;
 
 -(NSString *)stringValue;
