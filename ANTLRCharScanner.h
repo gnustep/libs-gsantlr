@@ -49,8 +49,8 @@
 @class ANTLRToken;
 @class ANTLRHashString;
 
-static const unichar ANTLR_NO_CHAR  = 0;
-static const unichar ANTLR_EOF_CHAR = (unichar)-1;
+#define ANTLR_NO_CHAR  ((unichar)0)
+#define ANTLR_EOF_CHAR ((unichar)-1)
 
 @interface ANTLRCharScanner : NSObject <ANTLRTokenizer>
 {

@@ -1,6 +1,8 @@
 2004-02-26  David Ayers  <d.ayers@inode.at>
 
 	* GNUmakefile: Link against -baseadd on non-*-gnu-*.
+	* ANTLRCharScanner.h: Convert ANTLR_NO_CHAR and ANTLR_EOF_CHAR
+	to defines.
 	
 2004-02-25  David Ayers  <d.ayers@inode.at>
 
