@@ -40,7 +40,8 @@
 //MG
 NSString* ANTLRTIDInfo()
 {
-  NSString* tinfo=nil;
+  NSString* tinfo=@"";
+#if GNUSTEP_BASE_LIBRARY
   if ([NSThread isMultiThreaded])
 	{
 	  NSThread* t = [NSThread currentThread];
@@ -48,8 +49,7 @@ NSString* ANTLRTIDInfo()
 					 ((t && t->_thread_id) ? 
 					  ((void*)t->_thread_id) : ((void*)objc_thread_id()))];
 	}
-  else
-	tinfo=[NSString string];
+#endif
   return tinfo;
 };
 
@@ -124,4 +124,3 @@ NSString* ANTLRTIDInfo()
 
 };
 @end;
-

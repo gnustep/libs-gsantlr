@@ -81,6 +81,7 @@
   while (self->queue->count < _amount + self->markerOffset)
 	{
 	  volatile unichar nextChar;
+	  static NSString *fmt = @"CharBuffer catchException:%@ (%@)";
 
 	  NS_DURING
 		{
@@ -95,7 +96,7 @@
 			nextChar = ANTLR_EOF_CHAR;
 		  else
 			{
-			  NSLog(@"CharBuffer catchException:%@ (%@)",localException,[localException reason]);
+			  NSLog(fmt,localException,[localException reason]);
 			  [localException raise];
 			};
 		}

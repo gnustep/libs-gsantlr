@@ -108,18 +108,20 @@
 	  t = AUTORELEASE([ANTLRCommonAST new]);
   else
 	{
+	  NSString *fmt  = @"%@ ASTFactory catchException:%@ (%@)";
+	  NSString *fmt2 = @"Can't create AST Node %@";
 	  NS_DURING
 		{
 		  t = AUTORELEASE([nodeTypeClass new]);
 		}
 	  NS_HANDLER
 		{
-		  NSLog(@"%@ ASTFactory catchException:%@ (%@)",
+		  NSLog(fmt,
 				ANTLRTIDInfo(),
 				localException,
 				[localException reason]);
-		  [ANTLRLogErr writeString:[NSString stringWithFormat:@"Can't create AST Node %@",
-											  nodeTypeClass]];
+		  [ANTLRLogErr writeString:[NSString stringWithFormat:fmt2,
+											 nodeTypeClass]];
 		}
 	  NS_ENDHANDLER;
 	};

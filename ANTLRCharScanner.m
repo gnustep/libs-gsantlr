@@ -36,7 +36,10 @@
 
 #include "gsantlr/ANTLRCommon.h"
 #include "gsantlr/ANTLRBitSet.h"
-#include <base/Unicode.h>
+
+#if GNUSTEP_BASE_LIBRARY
+#  include <base/Unicode.h>
+#endif
 
 #define SELF_LA1 _ANTLRCharScanner_LA(self, 1)
 
@@ -400,6 +403,7 @@ unichar _ANTLRCharScanner_LA(ANTLRCharScanner *self,int _i)
 		[self appendCharacter:SELF_LA1];
 	  else
 		{
+		  NSString *fmt = @"%@ CharScanner catchException:%@ (%@)";
 		  // use [input LA:], not [self LA:], to get original case
 		  // [CharScanner LA:] would toLower it.		  
 		  NS_DURING
@@ -408,7 +412,7 @@ unichar _ANTLRCharScanner_LA(ANTLRCharScanner *self,int _i)
 			}
 		  NS_HANDLER
 			{
-			  NSLog(@"%@ CharScanner catchException:%@ (%@)",
+			  NSLog(fmt,
 					ANTLRTIDInfo(),
 					localException,
 					[localException reason]);
@@ -526,7 +530,11 @@ unichar _ANTLRCharScanner_LA(ANTLRCharScanner *self,int _i)
 //--------------------------------------------------------------------
 -(unichar)toLower:(unichar)_char
 {
+#if GNUSTEP_BASE_LIBRARY
   return uni_tolower(_char);
+#else
+  return tolower(_char);
+#endif
 };
 
 // tracing
