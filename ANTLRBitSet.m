@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include <gsantlr/ANTLRCommon.h>
-#include <gsantlr/ANTLRBitSet.h>
+#include "gsantlr/ANTLRCommon.h"
+#include "gsantlr/ANTLRBitSet.h"
 
 #define ANTLRStorageSize   sizeof(ANTLRBitSetStorage)
 #define ANTLRBitsPerEntry  (ANTLRStorageSize * 8)

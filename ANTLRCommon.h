@@ -45,6 +45,10 @@
 	#define ANTLR_GC 0
 #endif
 
+#ifndef GNUSTEP
+#include <gnustep/base/GNUstep.h>
+#endif
+
 //defines for memory management
 
 #define ANTLR_DESTROY(obj)			DESTROY(obj)

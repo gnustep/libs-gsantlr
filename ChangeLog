@@ -1,0 +1,42 @@
+2003-07-11  David Ayers  <d.ayers@inode.at>
+
+	* ANTLRCommon.h: Include GNUstep.h if GNUSTEP is not defined for
+	OS X.
+	* ANTLRBitSet.m; Update include syntax.
+
+2001-08-20  Adam Fedor  <fedor@gnu.org>
+
+	* Update to work with antlr 2.7.1.  NOTE: This breaks gsweb
+	which is coded to work with the output of antlr 2.5.0.
+	* ObjcCodeGenerator/ObjcCodeGenerator.java: Update
+	* ObjcCodeGenerator/mkalljar.patch: Update
+	* ObjcCodeGenerator/objc/ActionLexer.java: New file.
+	* ObjcCodeGenerator/objc/ActionLexerTokenTypes.java: New file.
+	* ObjcCodeGenerator/objc/ActionLexerTokenTypes.txt: New file.
+	* ObjcCodeGenerator/objc/action.g: New file.
+	(patch from kim@tinker.com).
+
+2000-05-01  Mirko Viviani  <mirko.viviani@rccr.cremona.it>
+
+	* ANTLRLog.m: fix for the new NSThread implementation.
+
+2000-03-18  Manuel Guesdon <mguesdon@sbuilders.com>
+	ANTLRHashString.h/.m: modify length type from int to unsigned int
+	
+2000-02-22  Manuel Guesdon <mguesdon@sbuilders.com>
+
+	* GNUmakefile: install gsantlr in system root (GNUSTEP_INSTALLATION_DIR)
+		instead of user root
+
+2000-01-27  Manuel Guesdon <mguesdon@sbuilders.com>
+
+	* Added LICENSE and README files
+	* Added ObjcCodeGenerator directory
+	
+2000-01-27  Manuel Guesdon <mguesdon@sbuilders.com>
+	
+	* ANTLRCharBuffer.m, ANTLRCharScanner.m, ANTLRASTFactory.m, 
+		ANTLRLog.m: Helge Hess changes tp compile with 
+		libFoundation
+
+	
