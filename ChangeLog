@@ -1,3 +1,7 @@
+2004-02-25  David Ayers  <d.ayers@inode.at>
+
+	* ANTLRCommon.h: Include GSObjCRuntime declarations.
+
 2003-11-12  David Ayers  <d.ayers@inode.at>
 
 	* ANTLRCharBuffer.m (-[ANTLRCharBuffer fill:]):  Remove exception
