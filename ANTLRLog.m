@@ -46,8 +46,7 @@ NSString* ANTLRTIDInfo()
 	{
 	  NSThread* t = [NSThread currentThread];
 	  tinfo=[NSString stringWithFormat:@"TID=%p ",
-					 ((t && t->_thread_id) ? 
-					  ((void*)t->_thread_id) : ((void*)objc_thread_id()))];
+					 ((void*)objc_thread_id())];
 	}
 #endif
   return tinfo;

@@ -1,3 +1,7 @@
+2000-05-01  Mirko Viviani  <mirko.viviani@rccr.cremona.it>
+
+	* ANTLRLog.m: fix for the new NSThread implementation.
+
 2000-03-18  Manuel Guesdon <mguesdon@sbuilders.com>
 	ANTLRHashString.h/.m: modify length type from int to unsigned int
 	
