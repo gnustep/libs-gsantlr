@@ -66,6 +66,10 @@ $(LIBRARY_NAME)_OBJC_FILES = \
 
 ADDITIONAL_CPPFLAGS += -Wall -I../Foundation -I..
 
+ifneq ($(FOUNDATION_LIB),gnu)
+LIBRARIES_DEPEND_UPON += -lgnustep-baseadd
+endif
+
 libGSANTLR_HEADER_FILES_DIR = .
 libGSANTLR_HEADER_FILES_INSTALL_DIR = /$(GNUSTEP_FND_DIR)/gsantlr
 
