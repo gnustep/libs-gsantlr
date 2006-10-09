@@ -1,8 +1,6 @@
 # $Id$
 
-GNUSTEP_INSTALLATION_DIR = $(GNUSTEP_SYSTEM_ROOT)
-
-include $(GNUSTEP_SYSTEM_ROOT)/Makefiles/common.make
+include $(GNUSTEP_MAKEFILES)/common.make
 
 LIBRARY_NAME = libGSANTLR
 
@@ -75,6 +73,6 @@ libGSANTLR_HEADER_FILES_INSTALL_DIR = /$(GNUSTEP_FND_DIR)/gsantlr
 
 -include GNUmakefile.preamble
 
-include $(GNUSTEP_SYSTEM_ROOT)/Makefiles/library.make
+include $(GNUSTEP_MAKEFILES)/library.make
 
 -include GNUmakefile.postamble
