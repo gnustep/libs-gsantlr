@@ -528,11 +528,7 @@ unichar _ANTLRCharScanner_LA(ANTLRCharScanner *self,int _i)
 //--------------------------------------------------------------------
 -(unichar)toLower:(unichar)_char
 {
-#if GNUSTEP_BASE_LIBRARY
-  return uni_tolower(_char);
-#else
   return tolower(_char);
-#endif
 };
 
 // tracing

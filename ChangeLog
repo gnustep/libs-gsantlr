@@ -1,3 +1,8 @@
+2006-10-29  Richard Frith-Macdonald <rfm@gnu.org>
+
+	* ANTLRCharScanner.m: consistently use tolower() for case conversion
+	(should behave the same across all platforms).
+
 2006-10-09  Nicola Pero  <nicola.pero@meta-innovation.com>
 
 	* GNUmakefile: Do not set GNUSTEP_INSTALLATION_DIR.
