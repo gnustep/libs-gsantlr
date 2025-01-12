@@ -37,7 +37,7 @@
 #ifndef _ANTLRCommonToken_h_
 	#define _ANTLRCommonToken_h_
 
-#include <gsantlr/ANTLRToken.h>
+#include <ANTLRToken.h>
 
 @interface ANTLRCommonToken : ANTLRToken
 {

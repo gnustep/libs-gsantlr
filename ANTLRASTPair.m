@@ -34,9 +34,9 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRAST.h"
-#include "gsantlr/ANTLRASTPair.h"
+#include "ANTLRCommon.h"
+#include "ANTLRAST.h"
+#include "ANTLRASTPair.h"
 
 @implementation ANTLRASTPair
 

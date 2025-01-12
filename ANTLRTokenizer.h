@@ -39,7 +39,7 @@
 #ifndef _ANTLRTokenizer_h_
 	#define _ANTLRTokenizer_h_
 
-#include <gsantlr/ANTLRToken.h>
+#include <ANTLRToken.h>
 
 @protocol ANTLRTokenizer
 - (ANTLRDefToken)nextToken; // throws IOException

@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRLLkParser.h"
+#include "ANTLRCommon.h"
+#include "ANTLRLLkParser.h"
 
 BOOL ANTLRLLkParser_traceFlag_LA=NO;
 

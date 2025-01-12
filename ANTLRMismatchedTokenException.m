@@ -34,9 +34,9 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRMismatchedTokenException.h"
-#include "gsantlr/ANTLRBitSet.h"
+#include "ANTLRCommon.h"
+#include "ANTLRMismatchedTokenException.h"
+#include "ANTLRBitSet.h"
 
 @implementation ANTLRMismatchedTokenException
 

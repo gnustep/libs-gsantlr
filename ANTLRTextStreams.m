@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRTextStreams.h"
+#include "ANTLRCommon.h"
+#include "ANTLRTextStreams.h"
 
 //====================================================================
 @implementation NSFileHandle (ANTLRTextInputStream)

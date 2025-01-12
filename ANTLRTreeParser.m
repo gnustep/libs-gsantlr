@@ -34,12 +34,12 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRBitSet.h"
-#include "gsantlr/ANTLRAST.h"
-#include "gsantlr/ANTLRASTFactory.h"
-#include "gsantlr/ANTLRASTNULLType.h"
-#include "gsantlr/ANTLRTreeParser.h"
+#include "ANTLRCommon.h"
+#include "ANTLRBitSet.h"
+#include "ANTLRAST.h"
+#include "ANTLRASTFactory.h"
+#include "ANTLRASTNULLType.h"
+#include "ANTLRTreeParser.h"
 
 
 

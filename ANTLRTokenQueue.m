@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRTokenQueue.h"
+#include "ANTLRCommon.h"
+#include "ANTLRTokenQueue.h"
 
 @implementation ANTLRTokenQueue
 

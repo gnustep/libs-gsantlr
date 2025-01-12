@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRToken.h"
+#include "ANTLRCommon.h"
+#include "ANTLRToken.h"
 
 
 @implementation ANTLRToken

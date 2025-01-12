@@ -37,7 +37,7 @@
 #ifndef _ANTLRTokenQueue_h_
 	#define _ANTLRTokenQueue_h_
 
-#include <gsantlr/ANTLRToken.h>
+#include <ANTLRToken.h>
 
 // A private circular buffer object used by the token buffer
 @interface ANTLRTokenQueue : NSObject

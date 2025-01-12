@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRLog.h"
+#include "ANTLRCommon.h"
+#include "ANTLRLog.h"
 
 //MG
 NSString* ANTLRTIDInfo()

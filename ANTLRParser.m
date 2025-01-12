@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRBitSet.h"
+#include "ANTLRCommon.h"
+#include "ANTLRBitSet.h"
 
 @implementation ANTLRParser
 

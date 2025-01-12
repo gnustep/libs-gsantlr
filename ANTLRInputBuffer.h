@@ -37,7 +37,7 @@
 #ifndef _ANTLRInputBuffer_h_
 	#define _ANTLRInputBuffer_h_
 
-#include <gsantlr/ANTLRTextStreamProtocols.h>
+#include <ANTLRTextStreamProtocols.h>
 
 //	A Stream of characters fed to the lexer from a InputStream that can
 //		be rewound via mark()/rewind() methods.

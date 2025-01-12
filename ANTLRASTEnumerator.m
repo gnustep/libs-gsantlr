@@ -34,10 +34,10 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRBitSet.h"
-#include "gsantlr/ANTLRAST.h"
-#include "gsantlr/ANTLRASTEnumerator.h"
+#include "ANTLRCommon.h"
+#include "ANTLRBitSet.h"
+#include "ANTLRAST.h"
+#include "ANTLRASTEnumerator.h"
 
 @implementation ANTLRASTEnumerator
 

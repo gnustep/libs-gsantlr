@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRTextStreamProtocols.h"
+#include "ANTLRCommon.h"
+#include "ANTLRTextStreamProtocols.h"
 
 @implementation ANTLRCharBuffer
 

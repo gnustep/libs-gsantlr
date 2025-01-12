@@ -34,9 +34,9 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRHashString.h"
-#include "gsantlr/ANTLRCharScanner.h"
+#include "ANTLRCommon.h"
+#include "ANTLRHashString.h"
+#include "ANTLRCharScanner.h"
 
 @implementation ANTLRHashString
 

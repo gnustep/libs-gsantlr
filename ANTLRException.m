@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRException.h"
+#include "ANTLRCommon.h"
+#include "ANTLRException.h"
 
 //====================================================================
 @implementation ANTLRException

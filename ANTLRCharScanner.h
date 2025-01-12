@@ -37,9 +37,9 @@
 #ifndef _ANTLRCharScanner_h_
 	#define _ANTLRCharScanner_h_
 
-#include <gsantlr/ANTLRTokenizer.h>
-#include <gsantlr/ANTLRToken.h>
-#include <gsantlr/ANTLRTextStreamProtocols.h>
+#include <ANTLRTokenizer.h>
+#include <ANTLRToken.h>
+#include <ANTLRTextStreamProtocols.h>
 
 @class NSMutableDictionary, NSMutableString;
 @class ANTLRBitSet;

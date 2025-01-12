@@ -37,7 +37,7 @@
 #ifndef _ANTLRMismatchedTokenException_h_
 	#define _ANTLRMismatchedTokenException_h_
 
-#include <gsantlr/ANTLRAST.h>
+#include <ANTLRAST.h>
 
 @class ANTLRBitSet;
 

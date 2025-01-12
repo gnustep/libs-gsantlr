@@ -34,8 +34,8 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRCharQueue.h"
+#include "ANTLRCommon.h"
+#include "ANTLRCharQueue.h"
 
 @implementation ANTLRCharQueue
 

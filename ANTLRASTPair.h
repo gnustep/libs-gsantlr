@@ -37,7 +37,7 @@
 #ifndef _ANTLRASTPair_h_
 	#define _ANTLRASTPair_h_
 
-#include "gsantlr/ANTLRAST.h"
+#include "ANTLRAST.h"
 
 //	ASTPair:  utility class used for manipulating a pair of ASTs
 //		representing the current AST root and current AST sibling.

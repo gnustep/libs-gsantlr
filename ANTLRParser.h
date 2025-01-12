@@ -60,9 +60,9 @@
 //		  decreasing the guessing level.
 
 
-#include <gsantlr/ANTLRAST.h>
-#include <gsantlr/ANTLRASTFactory.h>
-#include <gsantlr/ANTLRToken.h>
+#include <ANTLRAST.h>
+#include <ANTLRASTFactory.h>
+#include <ANTLRToken.h>
 
 @class ANTLRBitSet;
 @class ANTLRTokenBuffer;

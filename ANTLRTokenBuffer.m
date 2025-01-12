@@ -34,9 +34,9 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRTokenBuffer.h"
-#include "gsantlr/ANTLRTokenQueue.h"
+#include "ANTLRCommon.h"
+#include "ANTLRTokenBuffer.h"
+#include "ANTLRTokenQueue.h"
 
 BOOL ANTLRTokenBuffer_traceFlag_LA=NO;
 @implementation ANTLRTokenBuffer

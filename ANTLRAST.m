@@ -34,12 +34,12 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
-#include "gsantlr/ANTLRBitSet.h"
-#include "gsantlr/ANTLRAST.h"
-#include "gsantlr/ANTLRASTFactory.h"
-#include "gsantlr/ANTLRASTEnumerator.h"
-#include "gsantlr/ANTLRASTNULLType.h"
+#include "ANTLRCommon.h"
+#include "ANTLRBitSet.h"
+#include "ANTLRAST.h"
+#include "ANTLRASTFactory.h"
+#include "ANTLRASTEnumerator.h"
+#include "ANTLRASTNULLType.h"
 
 BOOL verboseStringConversion = NO;
 NSString** tokenNames = NULL;

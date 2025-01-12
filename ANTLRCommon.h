@@ -67,24 +67,24 @@ typedef int ANTLRTokenType;
 #include <Foundation/NSObject.h>
 #include <Foundation/NSString.h>
 
-#include <gsantlr/ANTLRLog.h>
-#include <gsantlr/ANTLRCharFormatter.h>
-#include <gsantlr/ANTLRTokenizer.h>
-#include <gsantlr/ANTLRHashString.h>
-#include <gsantlr/ANTLRException.h>
-#include <gsantlr/ANTLRMismatchedTokenException.h>
-#include <gsantlr/ANTLRNoViableAltException.h>
+#include <ANTLRLog.h>
+#include <ANTLRCharFormatter.h>
+#include <ANTLRTokenizer.h>
+#include <ANTLRHashString.h>
+#include <ANTLRException.h>
+#include <ANTLRMismatchedTokenException.h>
+#include <ANTLRNoViableAltException.h>
 
-#include <gsantlr/ANTLRCharQueue.h>
-#include <gsantlr/ANTLRToken.h>
-#include <gsantlr/ANTLRCommonToken.h>
+#include <ANTLRCharQueue.h>
+#include <ANTLRToken.h>
+#include <ANTLRCommonToken.h>
 
-#include <gsantlr/ANTLRCharBuffer.h>
-#include <gsantlr/ANTLRCharScanner.h>
+#include <ANTLRCharBuffer.h>
+#include <ANTLRCharScanner.h>
 
-#include <gsantlr/ANTLRTokenBuffer.h>
-#include <gsantlr/ANTLRParser.h>
-#include <gsantlr/ANTLRLLkParser.h>
+#include <ANTLRTokenBuffer.h>
+#include <ANTLRParser.h>
+#include <ANTLRLLkParser.h>
 
 #if 0
 	#define CONST

@@ -37,7 +37,7 @@
 #ifndef _ANTLRTextStreams_h_
 	#define _ANTLRTextStreams_h_
 
-#include "gsantlr/ANTLRTextStreamProtocols.h"
+#include "ANTLRTextStreamProtocols.h"
 
 @interface NSFileHandle (ANTLRTextInputStream) <ANTLRTextInputStream>
 -(unichar)readCharacter;

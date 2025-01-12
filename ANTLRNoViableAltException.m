@@ -34,7 +34,7 @@
 		you developed it using ANTLR."
 */
 
-#include "gsantlr/ANTLRCommon.h"
+#include "ANTLRCommon.h"
 
 
 @implementation ANTLRNoViableAltException

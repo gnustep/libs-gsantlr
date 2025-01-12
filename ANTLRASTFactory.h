@@ -37,9 +37,9 @@
 #ifndef _ANTLRASTFactory_h_
 	#define _ANTLRASTFactory_h_
 
-#include <gsantlr/ANTLRAST.h>
-#include <gsantlr/ANTLRASTPair.h>
-#include <gsantlr/ANTLRToken.h>
+#include <ANTLRAST.h>
+#include <ANTLRASTPair.h>
+#include <ANTLRToken.h>
 
 
 @protocol ANTLRASTFactory
